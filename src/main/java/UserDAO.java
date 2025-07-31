@@ -7,4 +7,6 @@ public interface UserDAO {
     public boolean delete(int id);
     public List<User> readAll();
 
+
+
 }

@@ -2,6 +2,20 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class UserLinkedListDAO implements UserDAO {
+
+    private static UserLinkedListDAO userDAOInstance = null;
+
+    private UserLinkedListDAO() {
+
+    }
+
+    public static UserLinkedListDAO getInstance(){
+        if(userDAOInstance == null){
+            userDAOInstance = new UserLinkedListDAO();
+        }
+        return userDAOInstance;
+    }
+
     private List<User> users = new LinkedList<>();
     @Override
     public boolean create(User user){
