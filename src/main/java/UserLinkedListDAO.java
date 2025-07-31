@@ -14,4 +14,18 @@ public class UserLinkedListDAO implements UserDAO {
     public User read(int id){
         return users.stream().filter(u -> u.getId() == id).findFirst().orElse(null);
     }
+    @Override
+    public boolean update(int id, User user){
+        int index = users.indexOf(read(id));
+        return users.set(index, user) != null;
+    }
+    @Override
+    public boolean delete(int id){
+        int index = users.indexOf(read(id));
+        return users.remove(id) != null;
+    }
+    @Override
+    public List<User> readAll(){
+        return users;
+    }
 }
