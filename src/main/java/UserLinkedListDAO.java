@@ -1,0 +1,17 @@
+import java.util.LinkedList;
+import java.util.List;
+
+public class UserLinkedListDAO implements UserDAO {
+    private List<User> users = new LinkedList<>();
+    @Override
+    public boolean create(User user){
+        if(user != null){
+            return users.add(user);
+        }
+        return false;
+    }
+    @Override
+    public User read(int id){
+        return users.stream().filter(u -> u.getId() == id).findFirst().orElse(null);
+    }
+}
