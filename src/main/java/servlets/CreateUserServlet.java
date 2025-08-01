@@ -21,7 +21,6 @@ public class CreateUserServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         userDAO = UserLinkedListDAO.getInstance();
-
     }
 
     @Override
@@ -79,6 +78,7 @@ public class CreateUserServlet extends HttpServlet {
 
         User user = new User(username, password);
         userDAO.create(user);
+        resp.sendRedirect("/users/list");
     }
 
 }
