@@ -1,3 +1,7 @@
+package dao;
+
+import model.User;
+
 import java.util.LinkedList;
 import java.util.List;
 
