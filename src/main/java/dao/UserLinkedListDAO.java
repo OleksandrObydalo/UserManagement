@@ -40,7 +40,12 @@ public class UserLinkedListDAO implements UserDAO {
     @Override
     public boolean delete(int id){
         int index = users.indexOf(read(id));
-        return users.remove(id) != null;
+        try{
+            users.remove(index);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
     }
     @Override
     public List<User> readAll(){
