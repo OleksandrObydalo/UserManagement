@@ -8,6 +8,9 @@
 <%
     User user = (User)request.getAttribute("user");
 %>
+<%@ include file="header.html"%>
+<br><br>
+<%@ include file="header.html"%>
 <form action="/users/update" method="post">
     <p> ID: <%=user.getId()%></p>
     <p> Name: <%=user.getName()%></p>

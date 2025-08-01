@@ -11,6 +11,8 @@
     <title>Title</title>
 </head>
 <body>
+    <%@ include file="header.html"%>
+    <br><br>
     <form action="/users/create" method="post">
         <table>
             <tr>

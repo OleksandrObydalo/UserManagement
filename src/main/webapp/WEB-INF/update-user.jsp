@@ -8,6 +8,8 @@
     <%
         User user = (User)request.getAttribute("user");
     %>
+    <%@ include file="header.html"%>
+    <br><br>
     <form action="/users/update" method="post">
         <table>
             <tr>
